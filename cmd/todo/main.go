@@ -8,6 +8,7 @@ import (
 	input "github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/muesli/termenv"
+	"github.com/ztrue/tracerr"
 
 	"github.com/phanirithvij/todo-cli"
 )
@@ -391,11 +392,7 @@ func (m model) helpView() string {
 func main() {
 	p := tea.NewProgram(initializeModel())
 	if err := p.Start(); err != nil {
-		report(err)
+		tracerr.PrintSourceColor(err)
+		os.Exit(1)
 	}
-}
-
-func report(err error) {
-	fmt.Printf("todo-cli: %s\n", err.Error())
-	os.Exit(1)
 }
