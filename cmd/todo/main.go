@@ -9,7 +9,7 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/muesli/termenv"
 
-	"github.com/yuzuy/todo-cli"
+	"github.com/phanirithvij/todo-cli"
 )
 
 const (
