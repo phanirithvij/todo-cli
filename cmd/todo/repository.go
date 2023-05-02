@@ -5,7 +5,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/yuzuy/todo-cli"
+	"github.com/phanirithvij/todo-cli"
 )
 
 var repositoryFilePath = os.Getenv("HOME") + "/.todo-cli"
