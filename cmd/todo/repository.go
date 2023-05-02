@@ -4,11 +4,12 @@ import (
 	"encoding/json"
 	"errors"
 	"os"
+	"path/filepath"
 
 	"github.com/yuzuy/todo-cli"
 )
 
-var repositoryFilePath = os.Getenv("HOME") + "/.todo-cli"
+var repositoryFilePath = filepath.Join(os.Getenv("HOME"), ".todo-cli")
 
 func loadTasksFromRepositoryFile() (todos []*todo.Task, doneTodos []*todo.Task, latestTaskID int) {
 	f, err := os.Open(repositoryFilePath)
