@@ -11,9 +11,9 @@ import (
 )
 
 var usr, _ = user.Current()
-const dir = usr.HomeDir
+var hdir = usr.HomeDir
 
-var repositoryFilePath = filepath.Join(dir, ".todo-cli")
+var repositoryFilePath = filepath.Join(hdir, ".todo-cli")
 
 func loadTasksFromRepositoryFile() (todos []*todo.Task, doneTodos []*todo.Task, latestTaskID int) {
 	f, err := os.Open(repositoryFilePath)
