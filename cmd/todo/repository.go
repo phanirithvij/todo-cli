@@ -10,8 +10,8 @@ import (
 	"github.com/phanirithvij/todo-cli"
 )
 
-usr, _ := user.Current()
-dir := usr.HomeDir
+var usr, _ = user.Current()
+const dir = usr.HomeDir
 
 var repositoryFilePath = filepath.Join(dir, ".todo-cli")
 
